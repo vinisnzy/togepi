@@ -2,7 +2,7 @@ footer {
     background-color: var(--footerBackground);
 }
 
-footer .content {
+footer #content {
     font-family: "Montserrat", system-ui;
     font-weight: 500;
     width: 100%;
@@ -13,7 +13,7 @@ footer .content {
     color: var(--footerFontColor);
 }
 
-.leftContent {
+.leftFooter {
     height: 100%;
     width: 40%;
     display: flex;
@@ -22,27 +22,27 @@ footer .content {
     justify-content: space-between;
 }
 
-.leftContent ul {
+.leftFooter ul {
     margin-top: 130px;
     line-height: 40px;
 }
 
-.leftContent ul li a {
+.leftFooter ul li a {
     text-decoration: none;
     color: var(--footerFontColor);
 }
 
-.leftContent ul li a:hover {
+.leftFooter ul li a:hover {
     text-decoration: underline;
 }
 
-.leftContent p {
+.leftFooter p {
     font-weight: 400;
     align-self: baseline;
     margin: 0 0 25px 60px;
 }
 
-.centerContent {
+.centerFooter {
     height: 100%;
     width: 20%;
     display: flex;
@@ -50,13 +50,13 @@ footer .content {
     align-items: center;
 }
 
-.centerContent img {
+.centerFooter img {
     cursor: pointer;
     width: 200px;
     height: 200px;
 }
 
-.rightContent {
+.rightFooter {
     height: 100%;
     width: 40%;
     display: flex;
@@ -65,7 +65,7 @@ footer .content {
     justify-content: center;
 }
 
-.rightContent ul {
+.rightFooter ul {
     font-size: 13pt;
     line-height: 45px;
 }
@@ -81,15 +81,9 @@ footer .content {
     margin-right: 5px;
 }
 
-.whatsapp a {
-    transition: background 0.4s ease;
-    background: #ffffff;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
+.whatsapp a,
 .instagram a {
+    text-decoration: none;
     transition: background 0.4s ease;
     background: #ffffff;
     background-clip: text;

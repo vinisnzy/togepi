@@ -11,42 +11,59 @@ header #content {
     height: 95px;
 }
 
-.logo a img {
+.leftHeader {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 5%;
+}
+
+.leftHeader a img {
     width: 70px;
     height: 70px;
 }
+header nav {
+    height: 100%;
+}
 
-nav,
-nav ul {
+header nav,
+header nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 60px;
 }
 
-.centerElements {
+.centerHeader {
+    height: 100%;
+    width: 70%;
     margin: auto;
     padding-left: 15%;
     gap: 80px;
 }
 
-.centerElements li {
+.centerHeader li {
     font-size: 14pt;
-    padding: 3px 75px 3px 0;
+    padding: 1% 11% 1% 0;
     border-right: 1px solid #000000;
 }
 
-.centerElements li a:hover{
+.centerHeader li a:hover{
     text-decoration: underline;
 }
-.centerElements li:last-child {
+.centerHeader li:last-child {
     border: none;
 }
 
 
-a {
+.centerHeader a {
     text-decoration: none;
     color: var(--fontcolor);
+}
+
+.rightHeader {
+    height: 100%;
+    width: 15%;
 }
 
 nav {

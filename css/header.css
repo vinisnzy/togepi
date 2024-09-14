@@ -1,0 +1,61 @@
+@import url(reset.css);
+
+header {
+    background-color: var(--background);
+}
+header #content {
+    font-family: "Questrial", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px 0 100px;
+    align-items: center;
+    width: 100%;
+    height: 95px;
+}
+
+.logo a img {
+    width: 70px;
+    height: 70px;
+}
+
+nav,
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.centerElements {
+    margin: auto;
+    padding-left: 15%;
+    gap: 80px;
+}
+
+.centerElements li {
+    font-size: 14pt;
+    padding: 3px 75px 3px 0;
+    border-right: 1px solid #000000;
+}
+
+.centerElements li a:hover{
+    text-decoration: underline;
+}
+.centerElements li:last-child {
+    border: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--fontcolor);
+}
+
+nav {
+    width: 100%;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap');
+@import url(reset.css);
+@import url(header.css);
+@import url(footer.css);
+
+:root {
+    --background: #FFFFFF;
+    --footerBackground: #000000;
+    --footerFontColor: #FFFFFF;
+    --categoryBackground: #000000;
+    --categoryFontColor: #FFFFFF;
+    --productBackground: #EFF0F3;
+    --productBorder: #CCCCCC;
+    --fontcolor: #000000;
+    --saibamais: #6094C7;
+}
+
+body {
+    background-color: #6094C7;
+}

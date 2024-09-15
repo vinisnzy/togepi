@@ -21,6 +21,7 @@ html {
 }
 
 body {
+    width: 100vw;
     font-family: "Montserrat", system-ui;
     background-color: var(--background);
 }
@@ -112,14 +113,20 @@ h2 {
     width: 300px;
     height: 520px;
     border-radius: 10px;
-    border: 1px solid #cccccc;
+    border: 1px solid var(--productBorder);
+    transition: 0.3s ease;
+}
+
+.forYou ul li div:hover {
+    border: 1px solid var(--categoryBackground);
+    transition: img 0.3s ease;
 }
 
 .forYou img {
     border: 1px solid #cccccc;
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    width: 298px;
+    height: 299px;
 }
 
 .productName {
@@ -147,16 +154,16 @@ p span {
 
 .buttonSaibaMais {
     cursor: pointer;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 10px 50px 10px 50px;
     font-family: "Montserrat", system-ui;
-    font-size: 15pt;
+    font-size: 12pt;
     font-weight: 700;
     color: var(--productBackground);
     background-color: var(--button);
     border: none;
     border-radius: 10px;
-    transition: background-color 0.4s ease;
+    transition: 0.4s ease;
 }
 
 .buttonSaibaMais:hover{

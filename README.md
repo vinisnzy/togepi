@@ -26,11 +26,10 @@ Togepi é uma loja virtual fictícia especializada em roupas streetwear, onde os
 ## 🚀 Como Executar o Projeto
 
 
-1. Faça o clone deste repositório:
+1. Basta acessar o link abaixo:
    ```bash
-   git clone https://github.com/vinisnzy/togepi.git
+   https://vinisnzy.github.io/togepi/
    ```
-2. Abra o arquivo `index.html` no navegador para visualizar a loja.
 
 ## 🧑‍💻 Contribuição
 

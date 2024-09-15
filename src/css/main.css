@@ -16,6 +16,10 @@
     --button1: #CE634C;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Montserrat", system-ui;
     background-color: var(--background);

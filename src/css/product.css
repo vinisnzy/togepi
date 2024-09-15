@@ -1,0 +1,163 @@
+@import url(main.css);
+@import url(header.css);
+@import url(footer.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+}
+
+main adress {
+    display: flex;
+    align-items: center;
+    padding: 30px 0 40px 130px;
+}
+ 
+.textAdress {
+    margin: 30px 0 50px 150px;
+    color: var(--fontcolor);
+    font-size: 18pt;
+}
+
+.textAdress span {
+    color: var(--darkgray);
+}
+
+.mainContentProductPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 750px;
+    margin-left: 40px;
+}
+
+.leftContentProductPage {
+    width: 50%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftContentProductPage div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
+}
+
+#arrows {
+    cursor: pointer;
+}
+
+.imageProductPage {
+    width: 450px;
+    height: 450px;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+}
+
+.selectImagesList {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.selectImages {
+    cursor: pointer;
+    width: 115px;
+    height: 115 px;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+}
+
+.rightContentProductPage {
+    width: 50%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageProductName {
+    width: 70%;
+    font-size: 23pt;
+    font-weight: 800;
+}
+
+.pageProductPrice {
+    margin: 20px 0 10px 0;
+    font-size: 30pt;
+    font-weight: 500;
+}
+
+.pageProductPriceInstalltments span, .pageProductPricePix span {
+    font-weight: 700;
+}
+
+.installtments {
+    display: flex;
+    margin: 10px 0 30px 0;
+    padding: 0;
+    gap: 5px;
+}
+
+.sizesTitle {
+    font-size: 15pt;
+    margin-bottom: 30px ;
+}
+
+.sizesList {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.sizesList li {
+    width: 60px;
+    height: 60px;
+}
+
+.sizesList li button {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    font-family: "Montserrat", system-ui;
+    font-weight: 500;
+    font-size: 15pt;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+}
+
+.addToCart {
+    cursor: pointer;
+    width: 300px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.addToCart:hover {
+    background-color: var(--red);
+}
+
+button h2 {
+    font-family: "Montserrat", system-ui;
+    font-size: 14pt;
+}
+
+.maybeYouLike h2 {
+    margin-top: 0;
+}

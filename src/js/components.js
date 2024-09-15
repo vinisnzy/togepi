@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector(selector).innerHTML = data;
             });
     };
-    loadHTML("header", "components/header.html");
-    loadHTML("footer", "components/footer.html");
+    loadHTML("header", "/components/header.html");
+    loadHTML("footer", "/components/footer.html");
 });
 
 let prevScrollPos = window.scrollY;

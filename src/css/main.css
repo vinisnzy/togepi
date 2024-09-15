@@ -104,13 +104,14 @@ h2 {
     gap: 90px;
 }
 
-.forYou ul li div {
+.product {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: var(--productBackground);
-    width: 300px;
+    width: 301px;
     height: 520px;
     border-radius: 10px;
     border: 1px solid var(--productBorder);
@@ -123,7 +124,7 @@ h2 {
 .forYou img {
     border: 1px solid #cccccc;
     border-radius: 10px;
-    width: 298px;
+    width: 299px;
     height: 299px;
 }
 

@@ -1,0 +1,15 @@
+{
+  "name": "togepi",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao **Togepi**, uma loja de roupas streetwear online, desenvolvida com HTML, CSS e JavaScript. Este projeto tem como objetivo criar uma experiência interativa e visualmente atraente para amantes da moda urbana.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}

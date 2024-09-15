@@ -3,11 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectImages = document.querySelectorAll(".selectImages");
     const arrowRight = document.querySelector(".fa-arrow-right");
     const arrowLeft = document.querySelector(".fa-arrow-left");
-
-    const images = [
-        "/assets/imgs/products/moletomClass.webp",
-        "/assets/imgs/products/moletomClass1.webp",
-    ];
+    const images = Array.from(selectImages).map(img => img.src);
 
     let currentIndex = 0;
 
@@ -29,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectImages.forEach((img, index) => {
         img.addEventListener("click", function () {
-            currentIndex = index; // Atualiza o índice atual
+            currentIndex = index;
             updateMainImage(currentIndex);
         });
     });

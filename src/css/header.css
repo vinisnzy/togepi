@@ -13,7 +13,7 @@ header #content {
     padding: 0 100px 0 100px;
     align-items: center;
     width: 100%;
-    height: 80px;
+    height: 75px;
 }
 
 .leftHeader {
@@ -24,8 +24,8 @@ header #content {
 }
 
 .leftHeader a img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 header nav {
     height: 100%;
@@ -48,7 +48,7 @@ header nav ul {
 }
 
 .centerHeader li {
-    font-size: 14pt;
+    font-size: 13pt;
     padding: 1% 11% 1% 0;
     border-right: 1px solid #000000;
 }

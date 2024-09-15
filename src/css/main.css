@@ -5,15 +5,18 @@
 
 :root {
     --background: #ffffff;
+    --white: #ffffff;
     --footerBackground: #000000;
-    --footerFontColor: #ffffff;
-    --categoryBackground: #000000;
-    --categoryFontColor: #ffffff;
-    --productBackground: #eff0f3;
-    --productBorder: #cccccc;
-    --fontcolor: #000000;
-    --button: #6094c7;
-    --button1: #ce634c;
+    --black: #000000;
+    --lightgray: #eff0f3;
+    --gray: #cccccc;
+    --darkgray: #4D4D4D;
+    --blue: #6094c7;
+    --red: #ce634c;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 html {
@@ -43,7 +46,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--footerFontColor);
+    color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-size: 34pt;
     font-weight: 700;
@@ -88,8 +91,8 @@ h2 {
     width: 270px;
     height: 40px;
     font-size: 15pt;
-    background-color: var(--categoryBackground);
-    color: var(--categoryFontColor);
+    background-color: var(--footerBackground);
+    color: var(--white);
 }
 
 .categorys img {
@@ -97,7 +100,7 @@ h2 {
     height: 420px;
 }
 
-.forYou {
+.maybeYouLike {
     height: 800px;
     width: 100vw;
     display: flex;
@@ -105,7 +108,7 @@ h2 {
     align-items: center;
 }
 
-.forYou ul {
+.maybeYouLike ul {
     display: flex;
     gap: 80px;
 }
@@ -116,18 +119,19 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: var(--productBackground);
+    background-color: var(--lightgray);
     width: 261px;
     height: 460px;
     border-radius: 10px;
-    border: 1px solid var(--productBorder);
+    border: 1px solid var(--gray);
+    transition: 0.3s ease;
 }
 
-.forYou ul li div:hover {
-    border: 1px solid var(--categoryBackground);
+.maybeYouLike ul li div:hover {
+    border: 1px solid var(--black);
 }
 
-.forYou img {
+.maybeYouLike img {
     border: 1px solid #cccccc;
     border-radius: 10px;
     width: 259px;
@@ -153,7 +157,7 @@ h2 {
     font-size: 11pt;
 }
 
-p span {
+.productPricePix p span {
     font-weight: 700;
 }
 
@@ -164,13 +168,13 @@ p span {
     font-family: "Montserrat", system-ui;
     font-size: 12pt;
     font-weight: 700;
-    color: var(--productBackground);
-    background-color: var(--button);
+    color: var(--lightgray);
+    background-color: var(--blue);
     border: none;
     border-radius: 10px;
     transition: 0.4s ease;
 }
 
 .buttonSaibaMais:hover {
-    background-color: var(--button1);
+    background-color: var(--red);
 }

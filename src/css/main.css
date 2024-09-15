@@ -1,20 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap");
 @import url(reset.css);
 @import url(header.css);
 @import url(footer.css);
 
 :root {
-    --background: #FFFFFF;
+    --background: #ffffff;
     --footerBackground: #000000;
-    --footerFontColor: #FFFFFF;
+    --footerFontColor: #ffffff;
     --categoryBackground: #000000;
-    --categoryFontColor: #FFFFFF;
-    --productBackground: #EFF0F3;
-    --productBorder: #CCCCCC;
+    --categoryFontColor: #ffffff;
+    --productBackground: #eff0f3;
+    --productBorder: #cccccc;
     --fontcolor: #000000;
-    --saibamais: #6094C7;
+    --button: #6094c7;
+    --button1: #CE634C;
 }
 
 body {
-    background-color: #6094C7;
+    font-family: "Montserrat", system-ui;
+    background-color: var(--background);
+}
+
+.imageMain {
+    width: 100vw;
+    height: 740px;
+    margin-top: 40px;
+}
+
+.imageMain img {
+    filter: brightness(0.7);
+    width: 100%;
+    height: 740px;
+}
+
+.imageMain h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--footerFontColor);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 34pt;
+    font-weight: 700;
+}
+
+.categorys {
+    width: 100vw;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 28pt;
+    font-weight: 600;
+    margin: 70px 0 70px 0;
+}
+
+.categorys ul {
+    display: flex;
+    gap: 30px;
+}
+
+.categorys ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categorys div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 40px;
+    font-size: 15pt;
+    background-color: var(--categoryBackground);
+    color: var(--categoryFontColor);
+}
+
+.categorys img {
+    width: 330px;
+    height: 500px;
+}
+
+
+.forYou {
+    height: 800px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forYou ul {
+    display: flex;
+    gap: 90px;
+}
+
+.forYou ul li div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--productBackground);
+    width: 300px;
+    height: 520px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+}
+
+.forYou img {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.productName {
+    width: 75%;
+    margin: 15px 0 15px 0;
+    font-weight: 600;
+    font-size: 12pt;
+}
+
+.productPrice {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 22pt;
+}
+
+.productPricePix {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 11pt;
+}
+
+p span {
+    font-weight: 700;
+}
+
+.buttonSaibaMais {
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 10px 50px 10px 50px;
+    font-family: "Montserrat", system-ui;
+    font-size: 15pt;
+    font-weight: 700;
+    color: var(--productBackground);
+    background-color: var(--button);
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.4s ease;
+}
+
+.buttonSaibaMais:hover{
+    background-color: var(--button1);
 }

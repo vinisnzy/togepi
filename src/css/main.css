@@ -114,12 +114,10 @@ h2 {
     height: 520px;
     border-radius: 10px;
     border: 1px solid var(--productBorder);
-    transition: 0.3s ease;
 }
 
 .forYou ul li div:hover {
     border: 1px solid var(--categoryBackground);
-    transition: img 0.3s ease;
 }
 
 .forYou img {

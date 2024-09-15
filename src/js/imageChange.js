@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const productImage = document.getElementById("calçaFateStone");
+    const products = document.querySelectorAll('.product')
 
-    if (productImage) {
-        productImage.addEventListener("mouseover", function () {
-            this.src = "assets/imgs/products/calcaFate1.webp"; // Substitua pela segunda imagem
+    products.forEach(product => {
+        const image = product.querySelector('.productImage')
+        const originalSrc = image.src;
+        const hoverSrc = image.dataset.hover;
+
+        product.addEventListener("mouseover", function () {
+            image.src = hoverSrc;
         });
 
-        productImage.addEventListener("mouseout", function () {
-            this.src = "assets/imgs/products/calcaFate.webp"; // Retorna à imagem original
+        product.addEventListener("mouseout", function () {
+            image.src = originalSrc;
         });
-    } else {
-        console.error("Elemento com ID 'calçaFateStone' não encontrado.");
-    }
+    });
 });

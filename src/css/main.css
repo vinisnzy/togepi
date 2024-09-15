@@ -13,7 +13,7 @@
     --productBorder: #cccccc;
     --fontcolor: #000000;
     --button: #6094c7;
-    --button1: #CE634C;
+    --button1: #ce634c;
 }
 
 html {
@@ -63,15 +63,22 @@ h2 {
     margin: 70px 0 70px 0;
 }
 
-.categorys ul {
+.categorysList {
     display: flex;
     gap: 30px;
 }
 
-.categorys ul li {
+.category {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s;
+}
+
+.categorysList:has(.category:hover) .category:not(:hover) {
+    opacity: 0.6;
+    scale: 0.98;
 }
 
 .categorys div {
@@ -89,7 +96,6 @@ h2 {
     width: 330px;
     height: 500px;
 }
-
 
 .forYou {
     height: 800px;
@@ -165,6 +171,6 @@ p span {
     transition: 0.4s ease;
 }
 
-.buttonSaibaMais:hover{
+.buttonSaibaMais:hover {
     background-color: var(--button1);
 }

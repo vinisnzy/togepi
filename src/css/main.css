@@ -101,19 +101,26 @@ h2 {
 }
 
 .maybeYouLike {
-    height: 800px;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 150px;
 }
 
 .maybeYouLike ul {
     display: flex;
     gap: 80px;
+    margin-bottom: 50px;
+}
+
+.maybeYouLike :last-child {
+    margin-bottom: 0;
 }
 
 .product {
+    cursor: pointer;
     color: var(--black);
     display: flex;
     flex-direction: column;
@@ -125,12 +132,7 @@ h2 {
     border-radius: 10px;
     border: 1px solid var(--gray);
     transition: 0.3s ease;
-}
-
-.product a {
-    text-align: center;
-    text-decoration: none;
-    color: var(--black);
+    overflow: hidden;
 }
 
 .maybeYouLike ul li div:hover {
@@ -146,7 +148,7 @@ h2 {
 
 .productName {
     width: 75%;
-    margin: 15px 0 15px 33px;
+    margin: 15px 0 15px 0px;
     font-weight: 600;
     font-size: 10pt;
 }

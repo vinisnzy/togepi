@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="src/css/main.css" />
+        <script src="src/js/components.js" defer></script>
+        <script src="src/js/imageChange.js" defer></script>
         <title>Togepi</title>
     </head>
     <body>
@@ -12,27 +14,39 @@
 
         <main>
             <section class="imageMain">
-                <img src="assets/imgs/image-main.jpg" alt="Imagem Principal">
+                <img src="assets/imgs/image-main.jpg" alt="Imagem Principal" />
                 <h1>CONHEÇA NOSSA LOJA</h1>
             </section>
-            
+
             <section class="categorys">
                 <h2>CATEGORIAS</h2>
                 <ul class="categorysList">
                     <li class="category">
-                        <img src="assets/imgs/categories/tshirt.jpg" alt="Imagem camisetas">
+                        <img
+                            src="assets/imgs/categories/tshirt.jpg"
+                            alt="Imagem camisetas"
+                        />
                         <div><p>CAMISETAS</p></div>
                     </li>
                     <li class="category">
-                        <img src="assets/imgs/categories/pants.jpg" alt="Imagem calças">
+                        <img
+                            src="assets/imgs/categories/pants.jpg"
+                            alt="Imagem calças"
+                        />
                         <div><p>CALÇAS</p></div>
                     </li>
                     <li class="category">
-                        <img src="assets/imgs/categories/shoes.jpg" alt="Imagem tênis">
+                        <img
+                            src="assets/imgs/categories/shoes.jpg"
+                            alt="Imagem tênis"
+                        />
                         <div><p>TÊNIS</p></div>
                     </li>
                     <li class="category">
-                        <img src="assets/imgs/categories/acessories.jpg" alt="Imagem acessórios">
+                        <img
+                            src="assets/imgs/categories/acessories.jpg"
+                            alt="Imagem acessórios"
+                        />
                         <div><p>ACESSÓRIOS</p></div>
                     </li>
                 </ul>
@@ -43,38 +57,75 @@
                 <ul>
                     <li>
                         <div class="product">
-                            <img src="assets/imgs/products/calcaFate.webp" alt="Calça Fate Stone" data-hover="assets/imgs/products/calcaFate1.webp" 
-                            class="productImage">
-                                <p class="productName">CALÇA FATE WAVE JEANS STONE</p>
+                            <a
+                                href="/src/pages/roupas/calças/calça-fate-wave-jeans-stone.html"
+                            >
+                                <img
+                                    src="assets/imgs/products/calcaFate.webp"
+                                    alt="Calça Fate Stone"
+                                    data-hover="assets/imgs/products/calcaFate1.webp"
+                                    class="productImage"
+                                />
+                                <p class="productName">
+                                    CALÇA FATE WAVE JEANS STONE
+                                </p>
                                 <h4 class="productPrice">R$ 399,90</h4>
-                                <p class="productPricePix"><span>R$ 387,90</span> com desconto Pix</p>
+                                <p class="productPricePix">
+                                    <span>R$ 387,90</span> com desconto Pix
+                                </p>
                                 <button class="buttonSaibaMais">
                                     <p>COMPRE JÁ!</p>
                                 </button>
+                            </a>
                         </div>
                     </li>
                     <li>
                         <div class="product">
-                            <img src="assets/imgs/products/camisetaClassAmericalatina.webp" alt="Camiseta Class America Latina"
-                            data-hover="assets/imgs/products/camisetaClassAmericalatina1.webp" class="productImage">
-                                <p class="productName">CAMISETA CLASS AMERICA LATINA NAVY</p>
+                            <a
+                                href="/src/pages/roupas/camisetas/camiseta-class-america-latina-navy.html"
+                            >
+                                <img
+                                    src="assets/imgs/products/camisetaClassAmericalatina.webp"
+                                    alt="Camiseta Class America Latina"
+                                    data-hover="assets/imgs/products/camisetaClassAmericalatina1.webp"
+                                    class="productImage"
+                                />
+                                <p class="productName">
+                                    CAMISETA CLASS AMERICA LATINA NAVY
+                                </p>
                                 <h4 class="productPrice">R$ 200,00</h4>
-                                <p class="productPricePix"><span>R$ 194,00</span> com desconto Pix</p>
+                                <p class="productPricePix">
+                                    <span>R$ 194,00</span> com desconto Pix
+                                </p>
                                 <button class="buttonSaibaMais">
                                     <p>COMPRE JÁ!</p>
                                 </button>
+                            </a>
                         </div>
                     </li>
                     <li>
                         <div class="product">
-                            <img src="assets/imgs/products/moletomClass.webp" alt="Moletom Class" id="moletomClass" data-hover="assets/imgs/products/moletomClass1.webp"
-                            class="productImage">
-                            <p class="productName">MOLETOM CLASS CLASSIC HODDIE INVERSO BLACK</p>
-                            <h4 class="productPrice">R$ 430,00</h4>
-                            <p class="productPricePix"><span>R$ 417,10</span> com desconto Pix</p>
-                            <button class="buttonSaibaMais">
-                                <p>COMPRE JÁ!</p>
-                            </button>
+                            <a
+                                href="src/pages/roupas/moletons/moletom-class-classic-hoddie-inverso-black.html"
+                            >
+                                <img
+                                    src="assets/imgs/products/moletomClass.webp"
+                                    alt="Moletom Class"
+                                    id="moletomClass"
+                                    data-hover="assets/imgs/products/moletomClass1.webp"
+                                    class="productImage"
+                                />
+                                <p class="productName">
+                                    MOLETOM CLASS CLASSIC HODDIE INVERSO BLACK
+                                </p>
+                                <h4 class="productPrice">R$ 430,00</h4>
+                                <p class="productPricePix">
+                                    <span>R$ 417,10</span> com desconto Pix
+                                </p>
+                                <button class="buttonSaibaMais">
+                                    <p>COMPRE JÁ!</p>
+                                </button>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -82,8 +133,6 @@
         </main>
 
         <footer id="footer"></footer>
-        <script src="src/js/components.js" defer></script>
-        <script src="src/js/imageChange.js" defer></script>
         <script src="https://kit.fontawesome.com/ad15d7f51e.js"></script>
     </body>
 </html>

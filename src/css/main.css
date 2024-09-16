@@ -114,7 +114,7 @@ h2 {
 }
 
 .product {
-    cursor: pointer;
+    color: var(--black);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,6 +125,12 @@ h2 {
     border-radius: 10px;
     border: 1px solid var(--gray);
     transition: 0.3s ease;
+}
+
+.product a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
 }
 
 .maybeYouLike ul li div:hover {
@@ -140,7 +146,7 @@ h2 {
 
 .productName {
     width: 75%;
-    margin: 15px 0 15px 0;
+    margin: 15px 0 15px 33px;
     font-weight: 600;
     font-size: 10pt;
 }

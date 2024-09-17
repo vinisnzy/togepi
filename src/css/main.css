@@ -68,7 +68,7 @@ h2 {
 
 .categorysList {
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
 .category {
@@ -76,7 +76,12 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s;
+    border: 1px solid var(--white);
+    transition: 0.3s ease;
+}
+
+.category:hover {
+    border: 1px solid var(--black);
 }
 
 .categorysList:has(.category:hover) .category:not(:hover) {
@@ -135,12 +140,12 @@ h2 {
     overflow: hidden;
 }
 
-.maybeYouLike ul li div:hover {
+.product:hover {
     border: 1px solid var(--black);
 }
 
 .maybeYouLike img {
-    border: 1px solid #cccccc;
+    border: 1px solid var(--gray);
     border-radius: 10px;
     width: 259px;
     height: 259px;

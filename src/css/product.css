@@ -124,6 +124,12 @@ main adress {
     margin-bottom: 30px;
 }
 
+.sizesList li button.selected{
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+}
+
 .sizesList li {
     width: 60px;
     height: 60px;

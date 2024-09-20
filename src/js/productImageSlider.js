@@ -1,9 +1,12 @@
+// Faz o Image Slider da página de produto, com as setas e clickando nas fotos do produto
 document.addEventListener("DOMContentLoaded", function () {
     const mainImage = document.querySelector(".imageProductPage");
     const selectImages = document.querySelectorAll(".selectImages");
     const arrowRight = document.querySelector(".fa-arrow-right");
     const arrowLeft = document.querySelector(".fa-arrow-left");
-    const images = Array.from(selectImages).map(img => img.src);
+    const images = Array.from(selectImages).map((img) => img.src);
+    const sizeButtons = document.querySelectorAll(".sizeButton");
+
 
     let currentIndex = 0;
 
@@ -27,6 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("click", function () {
             currentIndex = index;
             updateMainImage(currentIndex);
+        });
+    });
+    
+    // Adiciona a funcionalidade de selecionar os botões da página de produto
+    sizeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            sizeButtons.forEach(btn => btn.classList.remove("selected"));
+            this.classList.add('selected');
         });
     });
 });

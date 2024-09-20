@@ -31,14 +31,14 @@ body {
 
 .imageMain {
     width: 100vw;
-    height: 740px;
+    height: 100%;
     margin-top: 40px;
 }
 
 .imageMain img {
     filter: brightness(0.7);
     width: 100%;
-    height: 740px;
+    height: 100%;
 }
 
 .imageMain h1 {

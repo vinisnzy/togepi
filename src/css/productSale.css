@@ -1,0 +1,16 @@
+@import url(product.css);
+
+.product {
+    height: 490px;
+}
+
+.originalPrice {
+    margin-bottom: 5px;
+    color: var(--darkgray);
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.productPrice {
+    color: var(--red);
+}

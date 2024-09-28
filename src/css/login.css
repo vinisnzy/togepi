@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap");
+@import url(reset.css);
+@import url(header.css);
+@import url(main.css);
+@import url(footer.css);
+
+main {
+    margin: 3% 0 6% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContent,
+.registerContent {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nameContent {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.nameContent .form-group {
+    width: 100%;
+}
+
+h2 {
+    margin-top: 15%;
+    font-size: 30pt;
+}
+
+input {
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.571)
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    font-size: 14pt;
+}
+
+.nameContent .form-group input {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    font-weight: 700;
+    font-size: 15pt;
+    color: var(--white);
+    box-sizing: border-box;
+    padding: 15px 75px 15px 75px ;
+    margin-top: 3%;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.726)
+}
+
+.loginContent button {
+    background-color: var(--blue);
+}
+
+.registerContent button {
+    background-color: var(--red);
+}
+
+.loginContent button:hover {
+    background-color: #0b0b47;
+}
+
+.registerContent button:hover {
+    background-color: #6a0c0c;
+}

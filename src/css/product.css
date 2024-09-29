@@ -18,6 +18,7 @@ main adress {
  
 .textAdress {
     margin: 30px 0 50px 150px;
+    align-self: baseline;
     color: var(--fontcolor);
     font-size: 18pt;
 }
@@ -185,4 +186,53 @@ button h2 {
     margin: 0px 0 10px 0;
     font-size: 30pt;
     font-weight: 500;
+}
+
+#input-search {
+    border: 1px solid black;
+    overflow: hidden;
+    outline: none;
+    border-radius: 3px;
+    height: 50px;
+    padding: 10px;
+    width: 40%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    font-size: 12pt;
+}
+
+#input-search:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.571);
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 3%;
+}
+
+.input-wrapper img {
+    cursor: pointer;
+    position: absolute;
+    top: 47%;
+    right: 31%;
+}
+
+#notFound {
+    display: none;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+#notFound h1 {
+    color: var(--darkgray);
+    font-weight: 500;
+    font-size: 30pt;
 }

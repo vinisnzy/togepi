@@ -7,14 +7,18 @@
         <link rel="stylesheet" href="/src/css/product.css">
         <script src="/src/js/index.js" defer></script>
         <script src="/src/js/productImageSlider.js" defer></script>
+        <script src="/src/js/search.js" defer></script>
     </head>
     <body>
         <header id="header"></header>
         <main>
-            <div class="adress">
-                <h2 class="textAdress">
-                    VOCÊ ESTÁ EM: <span style="color: var(--red);">PRODUTOS</span>
-                </h2>
+            <div class="input-wrapper">
+                <input type="text" name="search" id="input-search" placeholder="Pesquise Aqui">
+                <img src="/assets/icons/lupa.png" alt="search" width="26px" height="26px"/>
+            </div>
+            <div id="notFound">
+                <h1>Nenhum Produto Encontrado</h1>
+                <i class="fa-solid fa-heart-crack fa-2xl" style="color: #ff0000;"></i>
             </div>
             <section class="products">
                 <ul>
@@ -238,7 +242,7 @@
                         <div class="product" onclick="window.open('/src/pages/tenis/tênis-hocks-puff-cascalho-cinza.html', '_blank');">
                             <img src="/assets/imgs/products/tenisHocksCinza.webp" alt="Boné Barra Crew" data-hover="/assets/imgs/products/tenisHocksCinza1.webp" 
                             class="productImage">
-                                <p class="productName">TÊNIS HOCKS PUFF CASCALHO CINZA</p>
+                                <p class="productName">TENIS HOCKS PUFF CASCALHO CINZA</p>
                                 <h4 class="productPrice">R$ 379,90</h4>
                                 <p class="productPricePix"><span>R$ 368,50</span> com desconto Pix</p>
                                 <button class="buttonSaibaMais">
@@ -273,5 +277,6 @@
                 </ul>
         </main>
         <footer id="footer"></footer>
+        <script src="https://kit.fontawesome.com/ad15d7f51e.js"></script>
     </body>
 </html>

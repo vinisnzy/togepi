@@ -38,6 +38,7 @@ main {
 h2 {
     margin-top: 15%;
     font-size: 30pt;
+    margin-bottom: 10%;
 }
 
 input {
@@ -95,4 +96,27 @@ button {
 
 .registerContent button:hover {
     background-color: #6a0c0c;
+}
+
+.input-wrapper {
+    width: 100%;
+    border-radius: 3px;
+    position: relative;
+}
+
+.input-wrapper i {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 3.5%;
+}
+
+.fa-eye {
+    width: 20px;
+    height: 20px;
+}
+
+.fa-eye-slash {
+    width: 21px;
+    height: 21px;
 }

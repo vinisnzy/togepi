@@ -7,16 +7,17 @@
 main {
     margin: 3% 0 6% 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: baseline;
+    justify-content: space-evenly;
 }
 
 .loginContent,
 .registerContent {
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: baseline;
 }
 
 .nameContent {

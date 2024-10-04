@@ -68,7 +68,8 @@ h2 {
 
 .categorysList {
     display: flex;
-    gap: 30px;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .category {

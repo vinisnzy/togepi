@@ -1,7 +1,10 @@
-const divSearch = document.querySelector(".input-wrapper")
 const search = document.querySelector(".input-wrapper input");
 const products = document.querySelectorAll(".products ul li");
 const notFound = document.querySelector("#notFound");
+
+window.onload = function () {
+    search.focus();
+};
 
 search.addEventListener("input", () => {
     for (let product of products) {

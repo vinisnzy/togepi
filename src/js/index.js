@@ -51,8 +51,8 @@ scrollTopButton.addEventListener("click", function () {
 });
 
 function toggleCart() {
-    const cart = document.getElementById('cart-popup');
-    const overlay = document.getElementById('overlay');
-    cart.classList.toggle('active');
-    overlay.classList.toggle('active');
+    const cart = document.getElementById("cart-popup");
+    const overlay = document.getElementById("overlay");
+    cart.classList.toggle("active");
+    overlay.classList.toggle("active");
 }

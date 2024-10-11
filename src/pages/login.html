@@ -11,18 +11,31 @@
     <body>
         <header id="header"></header>
         <main>
-
             <form class="loginContent">
                 <h2>LOGIN</h2>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Digite Aqui" required/>
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="Digite Aqui"
+                        required
+                    />
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
                     <div class="input-wrapper">
-                        <input type="password" class="password" name="senha" placeholder="Digite Aqui" required/>
-                        <i class="fa-regular fa-eye fa-xl togglePassword" style="color: #272727;"></i>
+                        <input
+                            type="password"
+                            class="password"
+                            name="senha"
+                            placeholder="Digite Aqui"
+                            required
+                        />
+                        <i
+                            class="fa-regular fa-eye fa-xl togglePassword"
+                            style="color: #272727"
+                        ></i>
                     </div>
                 </div>
                 <button type="submit">ENTRAR</button>
@@ -32,36 +45,80 @@
                 <h2>CADASTRO</h2>
                 <div class="nameContent">
                     <div class="form-group">
-                        <label for="nome" >Nome</label>
-                        <input type="text" name="nome" placeholder="Digite Aqui" required/>
+                        <label for="nome">Nome</label>
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Digite Aqui"
+                            required
+                        />
                     </div>
                     <div class="form-group">
                         <label for="sobrenome">Sobrenome</label>
-                        <input type="text" name="sobrenome" placeholder="Digite Aqui" required/>
+                        <input
+                            type="text"
+                            name="sobrenome"
+                            placeholder="Digite Aqui"
+                            required
+                        />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Digite Aqui" autocomplete="new-password" required>
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="Digite Aqui"
+                        autocomplete="new-password"
+                        required
+                    />
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
                     <div class="input-wrapper">
-                        <input type="password" name="senha" class="password" placeholder="Digite Aqui" required>
-                        <i class="fa-regular fa-eye fa-xl togglePassword" style="color: #272727;"></i>
+                        <input
+                            type="password"
+                            name="senha"
+                            class="password"
+                            placeholder="Digite Aqui"
+                            required
+                        />
+                        <i
+                            class="fa-regular fa-eye fa-xl togglePassword"
+                            style="color: #272727"
+                        ></i>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="confirmeSenha">Confirme a Senha</label>
                     <div class="input-wrapper">
-                        <input type="password" class="password" name="confirmeSenha" placeholder="Digite Aqui" required> 
-                        <i class="fa-regular fa-eye fa-xl togglePassword" style="color: #272727;"></i>
+                        <input
+                            type="password"
+                            class="password"
+                            name="confirmeSenha"
+                            placeholder="Digite Aqui"
+                            required
+                        />
+                        <i
+                            class="fa-regular fa-eye fa-xl togglePassword"
+                            style="color: #272727"
+                        ></i>
                     </div>
                 </div>
                 <button type="submit">CADASTRAR</button>
             </form>
-            
         </main>
+        <div id="cart-popup" class="cart-popup">
+            <div class="headerCart">
+                <h3 class="titleCart">Seu Carrinho <span>(0 Itens)</span></h3>
+                <i class="fa-solid fa-xmark fa-xl" style="color: #585858;" onclick="toggleCart()"></i>
+            </div>
+            <div class="mainCart">
+                <p class="cartEmpty">Seu carrinho está vazio!</p>
+                <i class="fa-regular fa-face-frown fa-xl" style="color: #585858;"></i>
+            </div>
+        </div>
+        <div id="overlay" class="overlay" onclick="toggleCart()"></div>
         <footer id="footer"></footer>
         <script src="https://kit.fontawesome.com/ad15d7f51e.js"></script>
     </body>

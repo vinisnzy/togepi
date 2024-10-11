@@ -1,7 +1,7 @@
 .cart-popup {
     position: fixed;
     top: 0;
-    right: -100%; /* Escondido inicialmente */
+    right: -100%;
     width: 450px;
     height: 100%;
     background-color: white;
@@ -12,7 +12,7 @@
 }
 
 .cart-popup.active {
-    right: 0; /* Exibe o carrinho */
+    right: 0;
 }
 
 .overlay {

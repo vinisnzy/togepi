@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateMainImage(currentIndex);
         });
     });
-    
-    // Adiciona a funcionalidade de selecionar os botões da página de produto
+
     sizeButtons.forEach((button) => {
         button.addEventListener("click", function () {
             sizeButtons.forEach(btn => btn.classList.remove("selected"));

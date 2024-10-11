@@ -81,3 +81,7 @@ header nav ul {
 li {
     list-style: none;
 }
+
+.cart-icon {
+    cursor: pointer;
+}

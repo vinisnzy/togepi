@@ -55,3 +55,10 @@ scrollTopButton.addEventListener("click", function () {
         behavior: "smooth",
     });
 });
+
+function toggleCart() {
+    const cart = document.getElementById('cart-popup');
+    const overlay = document.getElementById('overlay');
+    cart.classList.toggle('active');
+    overlay.classList.toggle('active');
+}

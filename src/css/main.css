@@ -2,6 +2,7 @@
 @import url(reset.css);
 @import url(header.css);
 @import url(footer.css);
+@import url(cart.css);
 
 :root {
     --background: #ffffff;
@@ -59,7 +60,7 @@ main {
 
 .categorys {
     width: 100vw;
-    height: 680px;
+    height: 670px;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -230,6 +231,6 @@ h2 {
 @media (min-width: 1440px) {
     /* Estilos para desktops grandes */
     #acessoriosCategory {
-        display: block;
+        display: flex;
     }
 }

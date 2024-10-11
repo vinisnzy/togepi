@@ -3,6 +3,7 @@
 @import url(header.css);
 @import url(main.css);
 @import url(footer.css);
+@import url(cart.css);
 
 main {
     margin: 3% 0 6% 0;

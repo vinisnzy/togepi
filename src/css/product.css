@@ -1,6 +1,7 @@
 @import url(main.css);
 @import url(header.css);
 @import url(footer.css);
+@import url(cart.css);
 
 main {
     display: flex;

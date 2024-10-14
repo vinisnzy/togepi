@@ -12,7 +12,7 @@ search.addEventListener("input", () => {
         const nameElement = product.querySelector(".productName");
         const name = nameElement.textContent.toLowerCase();
 
-        if (searchValue && name.includes(searchValue)) {
+        if (!searchValue || name.includes(searchValue)) {
             product.style.display = "block";
             foundProducts++;
         } else {
@@ -20,5 +20,5 @@ search.addEventListener("input", () => {
         }
     });
 
-    notFound.style.display = foundProducts === 0 ? "flex" : "none";
+    notFound.style.display = searchValue && foundProducts === 0 ? "flex" : "none";
 });

@@ -1,42 +1,37 @@
-// Faz o Image Slider da página de produto, com as setas e clickando nas fotos do produto
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const mainImage = document.querySelector(".imageProductPage");
     const selectImages = document.querySelectorAll(".selectImages");
     const arrowRight = document.querySelector(".fa-arrow-right");
     const arrowLeft = document.querySelector(".fa-arrow-left");
-    const images = Array.from(selectImages).map((img) => img.src);
     const sizeButtons = document.querySelectorAll(".sizeButton");
 
-
+    const images = Array.from(selectImages).map((img) => img.src);
     let currentIndex = 0;
 
-    function updateMainImage(index) {
+    const updateMainImage = (index) => {
         mainImage.src = images[index];
-    }
+    };
 
-    arrowLeft.addEventListener("click", function () {
+    const navigateSlider = (direction) => {
         currentIndex =
-            currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+            (currentIndex + direction + images.length) % images.length;
         updateMainImage(currentIndex);
-    });
+    };
 
-    arrowRight.addEventListener("click", function () {
-        currentIndex =
-            currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-        updateMainImage(currentIndex);
-    });
+    arrowLeft.addEventListener("click", () => navigateSlider(-1));
+    arrowRight.addEventListener("click", () => navigateSlider(1));
 
     selectImages.forEach((img, index) => {
-        img.addEventListener("click", function () {
+        img.addEventListener("click", () => {
             currentIndex = index;
             updateMainImage(currentIndex);
         });
     });
 
     sizeButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            sizeButtons.forEach(btn => btn.classList.remove("selected"));
-            this.classList.add('selected');
+        button.addEventListener("click", () => {
+            sizeButtons.forEach((btn) => btn.classList.remove("selected"));
+            button.classList.add("selected");
         });
     });
 });

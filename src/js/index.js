@@ -1,58 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loadHTML = (selector, url) => {
+import { initCart } from "./cart.js";
+import { initHeader } from "./header.js";
+import { initProductImageHover } from "./product.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loadHTML = (selector, url, callback) => {
         fetch(url)
             .then((response) => response.text())
             .then((data) => {
                 document.querySelector(selector).innerHTML = data;
+                if (callback) callback();
             });
     };
-    loadHTML("header", "/components/header.html");
+
+    loadHTML("header", "/components/header.html", initHeader);
     loadHTML("footer", "/components/footer.html");
-});
+    loadHTML("cart", "/components/cart.html", initCart);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const products = document.querySelectorAll(".product");
+    initProductImageHover();
 
-    products.forEach((product) => {
-        const image = product.querySelector(".productImage");
-        const originalSrc = image.src;
-        const hoverSrc = image.dataset.hover;
-
-        product.addEventListener("mouseover", function () {
-            image.src = hoverSrc;
-        });
-
-        product.addEventListener("mouseout", function () {
-            image.src = originalSrc;
+    const scrollTopButton = document.getElementById("logoFooter");
+    scrollTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
         });
     });
 });
-
-let prevScrollPos = window.scrollY;
-const header = document.getElementById("header");
-
-window.onscroll = function () {
-    const currentScrollPos = window.scrollY;
-    if (prevScrollPos > currentScrollPos) {
-        header.style.top = "0";
-    } else {
-        header.style.top = "-80px";
-    }
-    prevScrollPos = currentScrollPos;
-};
-
-const scrollTopButton = document.getElementById("logoFooter");
-
-scrollTopButton.addEventListener("click", function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
-});
-
-function toggleCart() {
-    const cart = document.getElementById("cart-popup");
-    const overlay = document.getElementById("overlay");
-    cart.classList.toggle("active");
-    overlay.classList.toggle("active");
-}

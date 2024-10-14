@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="/src/css/product.css" />
-        <script src="/src/js/index.js" defer></script>
+        <script type="module" src="/src/js/index.js"></script>
         <script src="/src/js/productImageSlider.js" defer></script>
         <title>CALCA TUPODE JEANS 678 WASHED</title>
     </head>
@@ -159,17 +159,7 @@
                 </ul>
             </section>
         </main>
-        <div id="cart-popup" class="cart-popup">
-            <div class="headerCart">
-                <h3 class="titleCart">Seu Carrinho <span>(0 Itens)</span></h3>
-                <i class="fa-solid fa-xmark fa-xl" style="color: #585858;" onclick="toggleCart()"></i>
-            </div>
-            <div class="mainCart">
-                <p class="cartEmpty">Seu carrinho está vazio!</p>
-                <i class="fa-regular fa-face-frown fa-xl" style="color: #585858;"></i>
-            </div>
-        </div>
-        <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+        <cart id="cart"></cart>
         <footer id="footer"></footer>
         <script src="/src/js/productImageSlider.js" defer></script>
         <script src="https://kit.fontawesome.com/ad15d7f51e.js"></script>

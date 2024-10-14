@@ -2,35 +2,23 @@ const search = document.querySelector(".input-wrapper input");
 const products = document.querySelectorAll(".products ul li");
 const notFound = document.querySelector("#notFound");
 
-window.onload = function () {
-    search.focus();
-};
+window.onload = () => search.focus();
 
 search.addEventListener("input", () => {
-    for (let product of products) {
-        if (search.value != "") {
-            let name = product.querySelector(".productName");
-            name = name.textContent.toLowerCase();
-            let searchValue = search.value.toLowerCase();
-            if (!name.includes(searchValue)) {
-                product.style.display = "none";
-                let index = 0;
-                for (let product of products) {
-                    if (product.style.display == "none") {
-                        index++;
-                    }
-                }
-                if (index == products.length) {
-                    notFound.style.display = "flex";
-                }
-            } else {
-                product.style.display = "block";
-                notFound.style.display = "none";
-            }
+    const searchValue = search.value.toLowerCase();
+    let foundProducts = 0;
+
+    products.forEach((product) => {
+        const nameElement = product.querySelector(".productName");
+        const name = nameElement.textContent.toLowerCase();
+
+        if (searchValue && name.includes(searchValue)) {
+            product.style.display = "block";
+            foundProducts++;
         } else {
-            for (let product of products) {
-                product.style.display = "block";
-            }
+            product.style.display = "none";
         }
-    }
+    });
+
+    notFound.style.display = foundProducts === 0 ? "flex" : "none";
 });

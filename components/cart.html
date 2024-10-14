@@ -1,0 +1,61 @@
+<div id="content">
+    <div id="cart-popup" class="cart-popup">
+        <div class="headerCart">
+            <h3 class="titleCart">Seu Carrinho <span>(0 Itens)</span></h3>
+            <i class="fa-solid fa-xmark fa-xl"></i>
+        </div>
+        <div class="mainCart">
+        <div class="cartEmpty">
+            <p class="titleCartEmpty">Seu carrinho está vazio!</p>
+            <i class="fa-regular fa-face-frown fa-xl" id="cartEmptyIcon" style="color: #585858;"></i>
+        </div>
+            <ul id="cart-items-list" class="cartItens">
+                <li class="cartItem">
+                    <img
+                        src="/assets/imgs/products/boneBarraCrew1.webp"
+                        alt="Boné Barra Crew"
+                        class="cartItemImage"
+                    />
+                    <div class="textContent">
+                        <p class="cartItemName">Nome do Produto</p>
+                        <p class="cartItemSize">M</p>
+                        <div class="input-number-content">
+                            <button class="buttonMinus" id="buttonMinus">
+                                -
+                            </button>
+                            <input
+                                type="number"
+                                class="numberInput"
+                                id="numberInput"
+                                value="1"
+                                min="1"
+                            />
+                            <button class="buttonPlus" id="buttonPlus">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cartItemRightContent">
+                        <i class="fa-solid fa-trash-can fa-lg remove-item"></i>
+                        <p class="cartItemPrice">R$ 149,90</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="finalizeOrder" id="finalizeOrder">
+                <div class="subtotalContent">
+                    <p>Subtotal:</p>
+                    <p class="subtotal">R$ 149,90</p>
+                </div>
+                <div class="freteContent">
+                    <p>Frete:</p>
+                    <p class="frete">Grátis</p>
+                </div>
+                <div class="finalButtonContent">
+                    <button class="finalButton">FINALIZAR PEDIDO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+    <script src="/src/js/index.js"></script>
+</div>

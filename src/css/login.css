@@ -5,7 +5,7 @@
 @import url(footer.css);
 @import url(cart.css);
 
-main {
+.loginPage {
     margin: 3% 0 6% 0;
     display: flex;
     align-items: baseline;
@@ -37,13 +37,13 @@ main {
     width: 100%;
 }
 
-h2 {
+.loginPage h2 {
     margin-top: 15%;
     font-size: 30pt;
     margin-bottom: 10%;
 }
 
-input {
+.loginPage input {
     border: 1px solid black;
     overflow: hidden;
     border-radius: 3px;
@@ -52,12 +52,12 @@ input {
     width: 100%;
 }
 
-input:focus {
+.loginPage input:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.571)
 }
 
-label {
+.loginPage label {
     font-weight: 500;
     margin-bottom: 8px;
     display: block;
@@ -69,7 +69,7 @@ label {
     width: 100%;
 }
 
-button {
+.loginPage button {
     cursor: pointer;
     border-radius: 8px;
     overflow: hidden;

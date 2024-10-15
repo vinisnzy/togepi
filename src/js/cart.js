@@ -2,9 +2,6 @@ export function initCart() {
     const cartIcon = document.querySelector(".cart-icon");
     const closeIcon = document.querySelector(".fa-xmark");
     const overlay = document.getElementById("overlay");
-    const cartEmpty = document.querySelector(".cartEmpty");
-    const cartItemsList = document.getElementById("cart-items-list");
-    const finalizeOrder = document.getElementById("finalizeOrder");
 
     if (cartIcon && closeIcon && overlay) {
         cartIcon.addEventListener("click", toggleCart);
@@ -42,6 +39,7 @@ function changeItemQuantity(button, change) {
 function removeCartItem(icon) {
     const cartItem = icon.closest(".cartItem");
     cartItem.remove();
+
     updateCartItemCount();
 }
 
@@ -57,9 +55,37 @@ function updateCartItemCount() {
 
     const cartEmpty = document.querySelector(".cartEmpty");
     const cartItemsList = document.getElementById("cart-items-list");
+    const finalizeOrder = document.getElementById("finalizeOrder");
+
     cartEmpty.style.display = totalItemCount === 0 ? "flex" : "none";
     cartItemsList.style.display = totalItemCount === 0 ? "none" : "flex";
     finalizeOrder.style.display = totalItemCount === 0 ? "none" : "flex";
+
+    updateSubtotal();
+}
+
+function updateSubtotal() {
+    const cartItems = document.querySelectorAll(".cartItem");
+    let subtotal = 0;
+
+    cartItems.forEach((cartItem) => {
+        const priceElement = cartItem.querySelector(".cartItemPrice");
+        const itemQuantity = parseInt(
+            cartItem.querySelector(".numberInput").value
+        );
+        const itemPrice = parseFloat(
+            priceElement.textContent.replace("R$", "").replace(",", ".")
+        );
+
+        subtotal += itemQuantity * itemPrice;
+    });
+
+    const subtotalElement = document.querySelector(".subtotal");
+    if (subtotalElement) {
+        subtotalElement.textContent = `R$ ${subtotal
+            .toFixed(2)
+            .replace(".", ",")}`;
+    }
 }
 
 export function toggleCart() {

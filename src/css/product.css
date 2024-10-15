@@ -126,7 +126,7 @@ main adress {
     margin-bottom: 30px;
 }
 
-.sizesList li button.selected{
+.sizesList .sizeButton.selected{
     background-color: var(--black);
     color: var(--white);
     border: none;

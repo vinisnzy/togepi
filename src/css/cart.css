@@ -234,3 +234,24 @@
     color: white;
     background-color: var(--red);
 }
+
+.loading {
+    position: absolute; /* Ajuste conforme necessário */
+    top: 50%; /* Centralize verticalmente */
+    left: 50%; /* Centralize horizontalmente */
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Cor do fundo */
+    border-top: 8px solid var(--red); /* Cor da bolinha */
+    border-radius: 50%;
+    width: 40px; /* Tamanho da bolinha */
+    height: 40px; /* Tamanho da bolinha */
+    animation: spin 1s linear infinite; /* Animação */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

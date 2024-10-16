@@ -14,36 +14,6 @@
                 ></i>
             </div>
             <ul id="cart-items-list" class="cartItens">
-                <li class="cartItem">
-                    <img
-                        src="/assets/imgs/products/boneBarraCrew1.webp"
-                        alt="Boné Barra Crew"
-                        class="cartItemImage"
-                    />
-                    <div class="textContent">
-                        <p class="cartItemName">Nome do Produto</p>
-                        <p class="cartItemSize">M</p>
-                        <div class="input-number-content">
-                            <button class="buttonMinus" id="buttonMinus">
-                                -
-                            </button>
-                            <input
-                                type="number"
-                                class="numberInput"
-                                id="numberInput"
-                                value="1"
-                                min="1"
-                            />
-                            <button class="buttonPlus" id="buttonPlus">
-                                +
-                            </button>
-                        </div>
-                    </div>
-                    <div class="cartItemRightContent">
-                        <i class="fa-solid fa-trash-can fa-lg remove-item"></i>
-                        <p class="cartItemPrice">R$ 149,90</p>
-                    </div>
-                </li>
             </ul>
             <div class="finalizeOrder" id="finalizeOrder">
                 <div class="subtotalContent">
@@ -59,6 +29,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="loading" class="loading" style="display: none;">
+        <div class="loader"></div>
     </div>
     <div id="overlay" class="overlay" onclick="toggleCart()"></div>
     <script src="/src/js/index.js"></script>

@@ -6,6 +6,8 @@ function initCart() {
     const closeIcon = document.querySelector(".fa-xmark");
     const overlay = document.getElementById("overlay");
 
+    updateCartUI();
+
     if (cartIcon && closeIcon && overlay) {
         cartIcon.addEventListener("click", toggleCart);
         closeIcon.addEventListener("click", toggleCart);
@@ -26,40 +28,31 @@ function initCart() {
 
     // Atualiza a contagem de itens ao iniciar
     updateCartItemCount();
-    // Atualiza a UI do carrinho ao carregar a página
-    updateCartUI();
 }
 
 // Adiciona um item ao carrinho
 function addToCart(button) {
-    const productContainer = button.closest(".mainProduct"); // Ajuste conforme a estrutura do seu HTML
+    const productContainer = button.closest(".mainProduct");
 
     // Mostra o loading
     const loading = document.getElementById("loading");
     loading.style.display = "block";
 
     // Coleta os dados do produto
-    const productName =
-        productContainer.querySelector(".pageProductName").textContent;
-    const selectedSizeButton = productContainer.querySelector(
-        ".sizeButton.selected"
-    );
-    const productSize = selectedSizeButton
-        ? selectedSizeButton.textContent
-        : null; // Verifica se um tamanho foi selecionado
-    const productPrice = parseFloat(
-        productContainer
-            .querySelector(".pageProductPrice")
-            .textContent.replace("R$", "")
-            .replace(",", ".")
-    );
-    const productImage =
-        productContainer.querySelector(".imageProductPage").src;
+    const productName = productContainer.querySelector(".pageProductName").textContent;
+    const selectedSizeButton = productContainer.querySelector(".sizeButton.selected");
+    const productSize = selectedSizeButton ? selectedSizeButton.dataset.productSize : null; // Usar o atributo data
 
     if (!selectedSizeButton) {
         alert("Por favor, selecione um tamanho.");
+        loading.style.display = "none"; // Esconde o loading antes de retornar
         return;
     }
+
+    const productPrice = parseFloat(
+        productContainer.querySelector(".pageProductPrice").textContent.replace("R$", "").replace(",", ".")
+    );
+    const productImage = productContainer.querySelector(".imageProductPage").src;
 
     // Obtém o carrinho do localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -70,7 +63,7 @@ function addToCart(button) {
         size: productSize,
         price: productPrice,
         image: productImage,
-        quantity: 1, // Inicialmente com quantidade 1
+        quantity: 1,
     };
 
     // Verifica se o produto já está no carrinho
@@ -89,12 +82,23 @@ function addToCart(button) {
     // Atualiza o localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Atualiza a interface do carrinho
+    // Atualiza a interface do carrinho imediatamente
     updateCartUI();
     updateCartItemCount();
 
-    loading.style.display = "none";
+    loading.style.display = "none"; // Esconde o loading após o término da operação
 }
+
+// Adiciona o evento de clique aos botões de tamanho
+document.querySelectorAll(".sizeButton").forEach(button => {
+    button.addEventListener("click", function() {
+        // Remove a seleção de todos os botões de tamanho
+        document.querySelectorAll(".sizeButton").forEach(btn => btn.classList.remove("selected"));
+        // Adiciona a classe selecionada ao botão clicado
+        this.classList.add("selected");
+    });
+});
+
 
 // Lógica para remover um item do carrinho
 function removeCartItem(icon) {
@@ -220,8 +224,10 @@ function toggleCart() {
         cart.classList.toggle("active");
         overlay.classList.toggle("active");
 
-        // Quando o carrinho é aberto, atualiza a interface com os dados do localStorage
-        updateCartUI(); // Chame esta função para repopular o carrinho
+        // Quando o carrinho é aberto, atualiza a interface com os dados mais recentes do localStorage
+        if (cart.classList.contains("active")) {
+            updateCartUI(); // Chame esta função para repopular o carrinho com itens do localStorage
+        }
     }
 }
 
@@ -231,13 +237,36 @@ function changeItemQuantity(button, change) {
     const input = cartItem.querySelector(".numberInput");
     let currentValue = parseInt(input.value);
 
+    // Atualiza a quantidade com base no botão clicado
     if (change < 0 && currentValue > parseInt(input.min)) {
         input.value = currentValue + change;
     } else if (change > 0) {
         input.value = currentValue + change;
     }
 
+    // Atualiza o carrinho no localStorage
+    updateCartItemInLocalStorage(cartItem);
+
     updateCartItemCount();
+}
+
+// Função para atualizar a quantidade de um item no localStorage
+function updateCartItemInLocalStorage(cartItem) {
+    const itemName = cartItem.querySelector(".cartItemName").textContent; 
+    const itemSize = cartItem.querySelector(".cartItemSize").textContent; 
+    const newQuantity = parseInt(cartItem.querySelector(".numberInput").value);
+
+    // Obtém o carrinho do localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Atualiza a quantidade do item correspondente no carrinho
+    const itemIndex = cart.findIndex(item => item.name === itemName && item.size === itemSize);
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity = newQuantity; // Atualiza a quantidade
+    }
+
+    // Salva o carrinho atualizado no localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 // Código principal
@@ -256,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadHTML("cart", "/components/cart.html", initCart);
 
     initProductImageHover();
+
 
     const scrollTopButton = document.getElementById("logoFooter");
     scrollTopButton.addEventListener("click", () => {

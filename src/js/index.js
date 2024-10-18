@@ -1,6 +1,6 @@
 import { initHeader } from "./header.js";
 import { initProductImageHover } from "./product.js";
-// Inicializa o carrinho
+
 function initCart() {
     const cartIcon = document.querySelector(".cart-icon");
     const closeIcon = document.querySelector(".fa-xmark");
@@ -26,26 +26,23 @@ function initCart() {
         }
     });
 
-    // Atualiza a contagem de itens ao iniciar
     updateCartItemCount();
 }
 
-// Adiciona um item ao carrinho
 function addToCart(button) {
     const productContainer = button.closest(".mainProduct");
 
-    // Mostra o loading
-    const loading = document.getElementById("loading");
-    loading.style.display = "block";
-
-    // Coleta os dados do produto
     const productName = productContainer.querySelector(".pageProductName").textContent;
     const selectedSizeButton = productContainer.querySelector(".sizeButton.selected");
-    const productSize = selectedSizeButton ? selectedSizeButton.dataset.productSize : null; // Usar o atributo data
+    const productSize = selectedSizeButton ? selectedSizeButton.dataset.productSize : null;
 
-    if (!selectedSizeButton) {
+    // Verificar se existem opções de tamanho
+    const hasSizeOptions = productContainer.querySelectorAll(".sizeButton").length > 0;
+
+    // Se o produto tem tamanhos, exigir que um seja selecionado
+    if (hasSizeOptions && !selectedSizeButton) {
         alert("Por favor, selecione um tamanho.");
-        loading.style.display = "none"; // Esconde o loading antes de retornar
+        loading.style.display = "none";
         return;
     }
 
@@ -54,47 +51,36 @@ function addToCart(button) {
     );
     const productImage = productContainer.querySelector(".imageProductPage").src;
 
-    // Obtém o carrinho do localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Cria o item do carrinho
     const cartItem = {
         name: productName,
-        size: productSize,
+        size: productSize ? productSize : "", // Usar string vazia se não houver tamanho
         price: productPrice,
         image: productImage,
         quantity: 1,
     };
 
-    // Verifica se o produto já está no carrinho
     const existingItemIndex = cart.findIndex(
         (item) => item.name === productName && item.size === productSize
     );
 
     if (existingItemIndex !== -1) {
-        // Se o produto já estiver no carrinho, aumenta a quantidade
         cart[existingItemIndex].quantity += 1;
     } else {
-        // Se não estiver no carrinho, adiciona o novo item
         cart.push(cartItem);
     }
 
-    // Atualiza o localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Atualiza a interface do carrinho imediatamente
     updateCartUI();
     updateCartItemCount();
 
-    loading.style.display = "none"; // Esconde o loading após o término da operação
 }
 
-// Adiciona o evento de clique aos botões de tamanho
 document.querySelectorAll(".sizeButton").forEach(button => {
     button.addEventListener("click", function() {
-        // Remove a seleção de todos os botões de tamanho
         document.querySelectorAll(".sizeButton").forEach(btn => btn.classList.remove("selected"));
-        // Adiciona a classe selecionada ao botão clicado
         this.classList.add("selected");
     });
 });
@@ -103,31 +89,26 @@ document.querySelectorAll(".sizeButton").forEach(button => {
 // Lógica para remover um item do carrinho
 function removeCartItem(icon) {
     const cartItem = icon.closest(".cartItem");
-    const itemName = cartItem.querySelector(".cartItemName").textContent; // Ajuste conforme sua classe
-    const itemSize = cartItem.querySelector(".cartItemSize").textContent; // Ajuste conforme sua classe
+    const itemName = cartItem.querySelector(".cartItemName").textContent; 
+    const itemSize = cartItem.querySelector(".cartItemSize").textContent;
 
-    // Obtém o carrinho do localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Remove o item do carrinho
     cart = cart.filter(
         (item) => !(item.name === itemName && item.size === itemSize)
     );
 
-    // Atualiza o localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Remove o item da interface
     cartItem.remove();
 
     updateCartItemCount();
     updateSubtotal();
 }
 
-// Função para atualizar a interface do carrinho
 function updateCartUI() {
     const cartItemsList = document.getElementById("cart-items-list");
-    cartItemsList.innerHTML = ""; // Limpa a lista existente
+    cartItemsList.innerHTML = "";
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -142,17 +123,17 @@ function updateCartUI() {
             />
             <div class="textContent">
                 <p class="cartItemName">${item.name}</p>
-                <p class="cartItemSize">${item.size}</p>
+                <p class="cartItemSize">${item.size ? item.size : ""}</p>
                 <div class="input-number-content">
                     <button class="buttonMinus" id="buttonMinus"> - </button>
-                        <input
-                            type="number"
-                            class="numberInput"
-                            id="numberInput"
-                            value="${item.quantity}"
-                            min="1"
-                        />
-                        <button class="buttonPlus" id="buttonPlus"> + </button>
+                    <input
+                        type="number"
+                        class="numberInput"
+                        id="numberInput"
+                        value="${item.quantity}"
+                        min="1"
+                    />
+                    <button class="buttonPlus" id="buttonPlus"> + </button>
                 </div>
             </div>
             <div class="cartItemRightContent">
@@ -168,7 +149,6 @@ function updateCartUI() {
     updateSubtotal();
 }
 
-// Atualiza a contagem de itens no carrinho
 function updateCartItemCount() {
     const cartItems = document.querySelectorAll(".cartItem");
     let totalItemCount = Array.from(cartItems).reduce((total, cartItem) => {
@@ -190,7 +170,6 @@ function updateCartItemCount() {
     updateSubtotal();
 }
 
-// Atualiza o subtotal do carrinho
 function updateSubtotal() {
     const cartItems = document.querySelectorAll(".cartItem");
     let subtotal = 0;
@@ -215,7 +194,6 @@ function updateSubtotal() {
     }
 }
 
-// Função para alternar a exibição do carrinho
 function toggleCart() {
     const cart = document.getElementById("cart-popup");
     const overlay = document.getElementById("overlay");
@@ -224,58 +202,74 @@ function toggleCart() {
         cart.classList.toggle("active");
         overlay.classList.toggle("active");
 
-        // Quando o carrinho é aberto, atualiza a interface com os dados mais recentes do localStorage
         if (cart.classList.contains("active")) {
-            updateCartUI(); // Chame esta função para repopular o carrinho com itens do localStorage
+            updateCartUI();
         }
     }
 }
 
-// Função para alterar a quantidade de itens no carrinho
 function changeItemQuantity(button, change) {
     const cartItem = button.closest(".cartItem");
     const input = cartItem.querySelector(".numberInput");
     let currentValue = parseInt(input.value);
 
-    // Atualiza a quantidade com base no botão clicado
     if (change < 0 && currentValue > parseInt(input.min)) {
         input.value = currentValue + change;
     } else if (change > 0) {
         input.value = currentValue + change;
     }
 
-    // Atualiza o carrinho no localStorage
     updateCartItemInLocalStorage(cartItem);
+    updateCartItemPrice(cartItem);  // Atualiza o preço do item baseado na nova quantidade
 
     updateCartItemCount();
+    updateSubtotal();  // Recalcula o subtotal geral do carrinho
 }
 
-// Função para atualizar a quantidade de um item no localStorage
+// Nova função para atualizar o preço do item no carrinho
+function updateCartItemPrice(cartItem) {
+    const itemPriceElement = cartItem.querySelector(".cartItemPrice");
+    const itemQuantity = parseInt(cartItem.querySelector(".numberInput").value);
+
+    // Preço original do produto que estava salvo no localStorage
+    const itemName = cartItem.querySelector(".cartItemName").textContent; 
+    const itemSize = cartItem.querySelector(".cartItemSize").textContent;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItemData = cart.find(item => item.name === itemName && item.size === itemSize);
+    
+    if (cartItemData) {
+        const originalPrice = cartItemData.price; // O preço unitário original
+        const newTotalPrice = originalPrice * itemQuantity; // Preço total (unitário * quantidade)
+
+        // Atualiza o valor exibido no carrinho
+        itemPriceElement.textContent = `R$ ${newTotalPrice.toFixed(2).replace(".", ",")}`;
+    }
+}
+
+
 function updateCartItemInLocalStorage(cartItem) {
     const itemName = cartItem.querySelector(".cartItemName").textContent; 
     const itemSize = cartItem.querySelector(".cartItemSize").textContent; 
     const newQuantity = parseInt(cartItem.querySelector(".numberInput").value);
 
-    // Obtém o carrinho do localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Atualiza a quantidade do item correspondente no carrinho
     const itemIndex = cart.findIndex(item => item.name === itemName && item.size === itemSize);
     if (itemIndex !== -1) {
-        cart[itemIndex].quantity = newQuantity; // Atualiza a quantidade
+        cart[itemIndex].quantity = newQuantity;
     }
 
-    // Salva o carrinho atualizado no localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Código principal
 document.addEventListener("DOMContentLoaded", () => {
     const loadHTML = (selector, url, callback) => {
         fetch(url)
             .then((response) => response.text())
             .then((data) => {
-                document.querySelector(selector).innerHTML = data;
+                document.querySelector(selector).innerHTML = data;  
                 if (callback) callback();
             });
     };
